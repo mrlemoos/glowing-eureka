@@ -8,8 +8,9 @@ import { Input, type InputProps } from "@root/components/ui/input.module";
 type __PickedInputProps = Pick<InputProps, "value" | "onChange" | "disabled" | "onKeyDown">;
 
 /**
- * The modifier that removes any optional chaining annotation from the props
- * from the {@link __PickedInputProps} type.
+ * The modifier that removes any optional chaining
+ * annotation from the props from the
+ * {@link __PickedInputProps} type.
  */
 type __RequiredPickedInputProps = Required<__PickedInputProps>;
 
@@ -24,9 +25,10 @@ export interface PromptInputProps extends __RequiredPickedInputProps {
 }
 
 /**
- * This isolated React controlled component renders the field that is
- * responsible for {@link PromptInputProps.onChange | handling} and displaying
- * the user's {@link PromptInputProps.value | input} to the AI.
+ * This isolated React controlled component renders the
+ * field that is responsible for {@link PromptInputProps.onChange | handling}
+ * and displaying the user's {@link PromptInputProps.value | input}
+ * to the AI.
  *
  * The name defined in the HTML semantical form is `prompt`.
  *

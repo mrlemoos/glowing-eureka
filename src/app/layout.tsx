@@ -31,7 +31,8 @@ interface RootLayoutProps {
    */
   children: ReactNode;
   /**
-   * The {@link RootLayoutSearchParams | search parameters} of the layout.
+   * The {@link RootLayoutSearchParams | search parameters}
+   * of the layout.
    */
   searchParams?: RootLayoutSearchParams;
 }

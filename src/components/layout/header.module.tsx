@@ -8,12 +8,14 @@ import { cn } from "@root/util/cn.module";
 import { UserButton } from "./user-button.module";
 
 /**
- * The React-adapted version of the attributes for the {@link HTMLDivElement}.
+ * The React-adapted version of the attributes for the
+ * {@link HTMLDivElement}.
  */
 type HTMLDivElementAttributes = HTMLAttributes<HTMLDivElement>;
 
 /**
- * The attributes for the {@link HTMLDivElement} expect for the `children` prop.
+ * The attributes for the {@link HTMLDivElement} expect for
+ * the `children` prop.
  */
 type RememberedHTMLDivElementAttributes = Omit<HTMLDivElementAttributes, "children">;
 

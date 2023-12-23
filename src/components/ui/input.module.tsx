@@ -3,17 +3,20 @@ import { forwardRef, type InputHTMLAttributes } from "react";
 import { cn } from "@root/util/cn.module";
 
 /**
- * The attributes that are available on the {@link HTMLInputElement}.
+ * The attributes that are available on the
+ * {@link HTMLInputElement}.
  */
 type HTMLInputElementAttributes = InputHTMLAttributes<HTMLInputElement>;
 
 /**
- * The attributes that are remembered from the {@link HTMLInputElementAttributes}.
+ * The attributes that are remembered from the
+ * {@link HTMLInputElementAttributes}.
  */
 type RememberedHTMLInputElementAttributes = Omit<HTMLInputElementAttributes, "children">;
 
 /**
- * The attributes that are available on the {@link Input} component.
+ * The attributes that are available on the {@link Input}
+ * component.
  */
 export interface InputProps extends RememberedHTMLInputElementAttributes {
   /**
@@ -23,14 +26,16 @@ export interface InputProps extends RememberedHTMLInputElementAttributes {
 }
 
 /**
- * The forwarded reference type of the {@link Input | input} component. This is assigned as the memory address of the
+ * The forwarded reference type of the {@link Input | input}
+ * component. This is assigned as the memory address of the
  * {@link HTMLInputElement} component.
  */
 export type InputForwardedReferenceType = HTMLInputElement;
 
 /**
- * The {@link HTMLInputElement | input} component which accepts the user interaction and produces a value that can be
- * used in the application.
+ * The {@link HTMLInputElement | input} component which
+ * accepts the user interaction and produces a value that
+ * can be used in the application.
  *
  * @example
  * ```tsx

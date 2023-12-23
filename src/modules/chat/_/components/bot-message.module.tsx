@@ -6,9 +6,10 @@ export interface BotMessageProps {
    */
   message: string;
   /**
-   * The boolean which indicates whether or not the bot bubble is pulsing. This
-   * may be used to indicate the loading state of the message or the fact that
-   * the bot is 'typing.'
+   * The boolean which indicates whether or not the bot
+   * bubble is pulsing. This may be used to indicate the
+   * loading state of the message or the fact that the bot
+   * is 'typing.'
    *
    * @default false
    */

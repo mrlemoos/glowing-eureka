@@ -33,7 +33,8 @@ type __ReactRadixIconsSchemaKeys = keyof __ReactRadixIconsSchema;
 export type IconName = RemoveSuffix<__ReactRadixIconsSchemaKeys, "Icon">;
 
 /**
- * The type of the color of the {@link Icon | icon component}. The color can be specified in the formats allowed by the
+ * The type of the color of the {@link Icon | icon component}.
+ * The color can be specified in the formats allowed by the
  * SVG `fill` attribute.
  */
 export type IconColor =
@@ -47,13 +48,15 @@ export type IconColor =
   | (string & {});
 
 /**
- * The attributes adapted from React to be used in the injection of props into the `svg` elements.
+ * The attributes adapted from React to be used in the
+ * injection of props into the `svg` elements.
  */
 type __SVGElementAttributes = SVGAttributes<SVGSVGElement>;
 
 /**
- * The remembered attributes of the `svg` elements. 'Remembered' means that the attributes are not omitted from the
- * {@link __SVGElementAttributes | SVG element attributes}.
+ * The remembered attributes of the `svg` elements.
+ * 'Remembered' means that the attributes are not omitted
+ * from the {@link __SVGElementAttributes | SVG element attributes}.
  */
 type __RememberedSVGElementAttributes = Omit<
   __SVGElementAttributes,
@@ -69,15 +72,18 @@ export interface IconProps extends __RememberedSVGElementAttributes {
    */
   children?: never;
   /**
-   * The number of pixels applied to the width and height of the {@link IconName | icon}. As well, the value can be
-   * specified in the format allowed by the CSS {@link __SVGElementAttributes.width | `width`} and
-   * {@link __SVGElementAttributes.height | `height`} properties with string values.
+   * The number of pixels applied to the width and height of
+   * the {@link IconName | icon}. As well, the value can be
+   * specified in the format allowed by the CSS {@link __SVGElementAttributes.width | `width`}
+   * and {@link __SVGElementAttributes.height | `height`}
+   * properties with string values.
    *
    * @default 24
    */
   size?: number | string;
   /**
-   * The {@link IconName | name} of the icon to be rendered in the component.
+   * The {@link IconName | name} of the icon to be rendered
+   * in the component.
    */
   name: IconName;
   /**
@@ -89,9 +95,11 @@ export interface IconProps extends __RememberedSVGElementAttributes {
 }
 
 /**
- * The {@link Icon | icon component} renders the {@link IconName | icon} from the
- * {@link __ReactRadixIconsSchema | schema of icons}. The component is based on the {@link __SVGElementAttributes | SVG}
- * element and can be used as a regular {@link __SVGElementAttributes | SVG} element.
+ * The {@link Icon | icon component} renders the
+ * {@link IconName | icon} from the {@link __ReactRadixIconsSchema | schema of icons}.
+ * The component is based on the {@link __SVGElementAttributes | SVG}
+ * element and can be used as a regular {@link __SVGElementAttributes | SVG}
+ * element.
  *
  * @example
  * ```tsx

@@ -10,7 +10,9 @@ import { cn } from "@root/util/cn.module";
 import { getChildTextContent, isReactElement, isReactElementOfType } from "@root/util/react-util.module";
 
 /**
- * The exception that is thrown when the {@link Button} component fails to assert the accessibility of the component.
+ * The exception that is thrown when the {@link Button}
+ * component fails to assert the accessibility of the
+ * component.
  */
 export class ButtonAccessibilityAssertionException extends Error {
   constructor(message: string) {
@@ -20,7 +22,8 @@ export class ButtonAccessibilityAssertionException extends Error {
 }
 
 /**
- * The effect that is used to assert that the {@link Button} component accessibility.
+ * The effect that is used to assert that the {@link Button}
+ * component accessibility.
  */
 export function useButtonAccessibilityAssertionEffect(
   children: ReactNode,
@@ -36,9 +39,11 @@ export function useButtonAccessibilityAssertionEffect(
       const childrenArray = Children.toArray(children);
 
       if (
-        // Check if the props "aria-label" or "aria-labelledby" are defined.
+        // Check if the props "aria-label" or
+        // "aria-labelledby" are defined.
         !(ariaLabel || ariaLabelledBy) &&
-        // Check if the Button component has an Icon component as a child.
+        // Check if the Button component has an Icon
+        // component as a child.
         childrenArray.find(function (child) {
           isReactElementOfType(child, Icon);
         })
@@ -69,7 +74,8 @@ export function useButtonAccessibilityAssertionEffect(
 }
 
 /**
- * The variations of the button component applied to the {@link Button} component.
+ * The variations of the button component applied to the
+ * {@link Button} component.
  */
 const buttonVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
@@ -98,9 +104,11 @@ const buttonVariants = cva(
 );
 
 /**
- * The reference type of the value which is forwarded to the {@link Button} component's root element, *i.e.*, the
- * {@link HTMLButtonElement | `<button>`} element, or {@link ButtonProps.children | children} prop if the
- * {@link ButtonProps.asChild | `asChild`} prop is `true`.
+ * The reference type of the value which is forwarded to the
+ * {@link Button} component's root element, *i.e.*, the {@link HTMLButtonElement | `<button>`}
+ * element, or {@link ButtonProps.children | children} prop
+ * if the {@link ButtonProps.asChild | `asChild`} prop is
+ * `true`.
  */
 export type ButtonForwardedReferenceType = HTMLButtonElement;
 
@@ -122,9 +130,12 @@ type ButtonVariationProps = VariantProps<typeof buttonVariants>;
  */
 export interface ButtonProps extends HTMLButtonElementAttributes, ButtonVariationProps {
   /**
-   * Boolean value indicating whether or not the {@link children} prop should be get props that are injected into what
-   * would be the {@link Button} component root element. This is useful for when the {@link Button} component is used as
-   * a child of another component, *e.g.*, using button styles for a Next.js' `Link` component.
+   * Boolean value indicating whether or not the {@link children}
+   * prop should be get props that are injected into what
+   * would be the {@link Button} component root element.
+   * This is useful for when the {@link Button} component is
+   * used as a child of another component, *e.g.*, using
+   * button styles for a Next.js' `Link` component.
    *
    * @default false
    */
@@ -132,8 +143,10 @@ export interface ButtonProps extends HTMLButtonElementAttributes, ButtonVariatio
 }
 
 /**
- * The button component that is used to render actions in the application. The component is based on the HTML button
- * element and can be used as a regular HTML button element.
+ * The button component that is used to render actions in
+ * the application. The component is based on the HTML
+ * button element and can be used as a regular HTML button
+ * element.
  *
  * @example
  * ```tsx
@@ -148,8 +161,9 @@ export interface ButtonProps extends HTMLButtonElementAttributes, ButtonVariatio
  * }
  * ```
  *
- * It is also possible to forward the ref to the button element by providing the `ref` prop to the component, an example
- * of which is shown below:
+ * It is also possible to forward the ref to the button
+ * element by providing the `ref` prop to the component, an
+ * example of which is shown below:
  *
  * ```tsx
  * import { type JSX } from "react";
@@ -160,14 +174,18 @@ export interface ButtonProps extends HTMLButtonElementAttributes, ButtonVariatio
  *   const buttonRef = useRef<HTMLButtonElement>(null);
  *
  *   return (
- *     <Button ref={buttonRef} variant="outline" size="sm">Click me</Button>
+ *     <Button ref={buttonRef} variant="outline" size="sm">
+ *       Click me
+ *     </Button>
  *   );
  * }
  * ```
  *
- * To render the styles of the button, but applying to a different root element, the `asChild` prop can be defined as
- * `true`, so all the props and styles are inherited by the immediate native HTML child element, an example of which is
- * shown below:
+ * To render the styles of the button, but applying to a
+ * different root element, the `asChild` prop can be defined
+ * as `true`, so all the props and styles are inherited by
+ * the immediate native HTML child element, an example of
+ * which is shown below:
  *
  * @example
  * ```tsx

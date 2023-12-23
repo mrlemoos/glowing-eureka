@@ -16,7 +16,8 @@ type RememberedNextLinkProps = Omit<LinkProps, "children">;
  */
 type HTMLAnchorElementAttributes = AnchorHTMLAttributes<HTMLAnchorElement>;
 /**
- * The picked React-adapted for the HTML anchor element attributes.
+ * The picked React-adapted for the HTML anchor element
+ * attributes.
  */
 type PickedHTMLAnchorElementAttributes = Pick<HTMLAnchorElementAttributes, "target" | "rel">;
 
@@ -25,7 +26,8 @@ type PickedHTMLAnchorElementAttributes = Pick<HTMLAnchorElementAttributes, "targ
  */
 export interface AnchorProps extends RememberedNextLinkProps, PickedHTMLAnchorElementAttributes {
   /**
-   * The {@link ReactNode | custom node element or elements} to render as the content of the component.
+   * The {@link ReactNode | custom node element or elements}
+   * to render as the content of the component.
    */
   children?: ReactNode;
   /**
@@ -35,7 +37,9 @@ export interface AnchorProps extends RememberedNextLinkProps, PickedHTMLAnchorEl
 }
 
 /**
- * The component that renders the {@link Link} component from Next.js as the content of the {@link Button} component.
+ * The component that renders the {@link Link} component
+ * from Next.js as the content of the {@link Button}
+ * component.
  *
  * @props {@link AnchorProps}
  */

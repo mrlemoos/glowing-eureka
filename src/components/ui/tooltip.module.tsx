@@ -22,7 +22,8 @@ import {
 import { cn } from "@root/util/cn.module";
 
 /**
- * The type of the {@link ElementRef | forwarded reference} for the tooltip.
+ * The type of the {@link ElementRef | forwarded reference}
+ * for the tooltip.
  */
 export type TooltipForwardedReferenceType = ElementRef<typeof PrimitiveContent>;
 
@@ -31,7 +32,8 @@ export type TooltipForwardedReferenceType = ElementRef<typeof PrimitiveContent>;
  */
 export type TooltipContentProps = ComponentPropsWithoutRef<typeof PrimitiveContent>;
 /**
- * The picked props for the {@link PrimitiveContent} from Radix UI.
+ * The picked props for the {@link PrimitiveContent} from
+ * Radix UI.
  */
 type PickedPrimitiveContentProps = Pick<
   TooltipContentProps,
@@ -46,7 +48,8 @@ type PickedPrimitiveContentProps = Pick<
 >;
 
 /**
- * The props for the {@link PrimitiveProvider} from Radix UI.
+ * The props for the {@link PrimitiveProvider} from Radix
+ * UI.
  */
 export type TooltipProviderProps = ComponentPropsWithoutRef<typeof PrimitiveProvider>;
 /**
@@ -55,7 +58,8 @@ export type TooltipProviderProps = ComponentPropsWithoutRef<typeof PrimitiveProv
 export const TooltipProvider = PrimitiveProvider;
 
 /**
- * The picked props for the {@link PrimitiveProvider} from Radix UI.
+ * The picked props for the {@link PrimitiveProvider} from
+ * Radix UI.
  */
 type PickedPrimitiveProviderProps = Pick<
   TooltipProviderProps,
@@ -72,7 +76,8 @@ export type TooltipRootProps = ComponentPropsWithoutRef<typeof PrimitiveRoot>;
 export const TooltipRoot = PrimitiveRoot;
 
 /**
- * The picked props for the {@link PrimitiveRoot} from Radix UI.
+ * The picked props for the {@link PrimitiveRoot} from Radix
+ * UI.
  */
 type PickedPrimitiveRootProps = Pick<TooltipRootProps, "defaultOpen" | "open">;
 
@@ -86,7 +91,8 @@ export type TooltipTriggerProps = ComponentPropsWithoutRef<typeof PrimitiveTrigg
 export const TooltipTrigger = PrimitiveTrigger;
 
 /**
- * The picked props for the {@link PrimitiveTrigger} from Radix UI.
+ * The picked props for the {@link PrimitiveTrigger} from
+ * Radix UI.
  */
 type PickedPrimitiveTriggerProps = Pick<TooltipTriggerProps, "asChild">;
 
@@ -100,7 +106,8 @@ export type TooltipArrowProps = ComponentPropsWithoutRef<typeof PrimitiveArrow>;
 export const TooltipArrow = PrimitiveArrow;
 
 /**
- * The picked props for the {@link PrimitiveArrow} from Radix UI.
+ * The picked props for the {@link PrimitiveArrow} from
+ * Radix UI.
  */
 type PickedPrimitiveArrowProps = Pick<
   TooltipArrowProps,
@@ -122,19 +129,23 @@ type PickedPrimitiveArrowProps = Pick<
  */
 export interface TooltipContainerProps {
   /**
-   * The custom content element that is rendered inside the afloat tooltip.
+   * The custom content element that is rendered inside the
+   * afloat tooltip.
    */
   children: ReactNode;
   /**
-   * Checks whether or not the tooltip is rendered inside a {@link PrimitivePortal | portal} element.
+   * Checks whether or not the tooltip is rendered inside a
+   * {@link PrimitivePortal | portal} element.
    *
    * @default false
    */
   isPortal?: boolean;
   /**
-   * The {@link HTMLElement | element} which is the container/wrapper for the tooltip {@link TooltipProps.content | content},
-   * and inside the tooltip {@link TooltipProps.children | children} are rendered. If not defined and {@link isPortal}
-   * is `true`, this prop defaults to {@link document.body}.
+   * The {@link HTMLElement | element} which is the
+   * container/wrapper for the tooltip {@link TooltipProps.content | content},
+   * and inside the tooltip {@link TooltipProps.children | children}
+   * are rendered. If not defined and {@link isPortal} is
+   * `true`, this prop defaults to {@link document.body}.
    *
    * @default document.body
    *
@@ -168,7 +179,8 @@ export function TooltipContainer({
 }
 
 /**
- * The event that is fired when the tooltip visibility state is updated.
+ * The event that is fired when the tooltip visibility state
+ * is updated.
  */
 export class TooltipVisibilityStateUpdateEvent {
   constructor(
@@ -177,7 +189,8 @@ export class TooltipVisibilityStateUpdateEvent {
      */
     public readonly trigger: ReactNode,
     /**
-     * The boolean that indicates whether or not the tooltip is open.
+     * The boolean that indicates whether or not the tooltip
+     * is open.
      */
     public readonly isOpen: boolean,
     /**
@@ -198,7 +211,8 @@ export interface TooltipVisibilityStateUpdateEventHandler {
 }
 
 /**
- * The picked props for the {@link TooltipContainer} component used in the {@link Tooltip} component.
+ * The picked props for the {@link TooltipContainer}
+ * component used in the {@link Tooltip} component.
  */
 type PickedTooltipContainerProps = Pick<TooltipContainerProps, "isPortal" | "portalContainerElement">;
 
@@ -213,22 +227,27 @@ export interface TooltipProps
     PickedPrimitiveTriggerProps,
     PickedTooltipContainerProps {
   /**
-   * The {@link ReactNode | children} of the tooltip that will work as the trigger element for the tooltip, as well as
-   * the top-level {@link HTMLElement | element} to which the tooltip is anchored.
+   * The {@link ReactNode | children} of the tooltip that
+   * will work as the trigger element for the tooltip, as
+   * well as the top-level {@link HTMLElement | element} to
+   * which the tooltip is anchored.
    *
    * @see {@link ReactNode}
    * @see {@link HTMLElement}
    */
   children: ReactNode;
   /**
-   * The {@link ReactNode | custom content element} that is rendered inside the afloat tooltip.
+   * The {@link ReactNode | custom content element} that is
+   * rendered inside the afloat tooltip.
    *
    * @see {@link ReactNode}
    */
   content: ReactNode;
   /**
-   * The function that behaves as the event handler for the {@link TooltipVisibilityStateUpdateEvent} event. This event
-   * is fired when the tooltip visibility state is updated.
+   * The function that behaves as the event handler for the
+   * {@link TooltipVisibilityStateUpdateEvent} event. This
+   * event is fired when the tooltip visibility state is
+   * updated.
    *
    * @see {@link TooltipVisibilityStateUpdateEvent}
    * @see {@link TooltipVisibilityStateUpdateEventHandler}
@@ -237,9 +256,11 @@ export interface TooltipProps
 }
 
 /**
- * The component that is used to render a tooltip that is afloat. The default behaviour of the tooltip is to be afloat
- * and to be rendered inside the {@link document.body | body} element when the user hovers over the
- * {@link TooltipProps.children | children} of the {@link JSX} expression.
+ * The component that is used to render a tooltip that is
+ * afloat. The default behaviour of the tooltip is to be
+ * afloat and to be rendered inside the {@link document.body | body}
+ * element when the user hovers over the {@link TooltipProps.children | children}
+ * of the {@link JSX} expression.
  *
  * @example
  * ```tsx
@@ -256,8 +277,9 @@ export interface TooltipProps
  * }
  * ```
  *
- * Also, it is possible to pass a `asChild` prop so the children of the tooltip receive the props from the trigger
- * element. See the example below:
+ * Also, it is possible to pass a `asChild` prop so the
+ * children of the tooltip receive the props from the
+ * trigger element. See the example below:
  *
  * @example
  * ```tsx

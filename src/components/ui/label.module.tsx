@@ -7,7 +7,8 @@ import { Root as PrimitiveRoot } from "@radix-ui/react-label";
 import { cn } from "@root/util/cn.module";
 
 /**
- * The forwarded reference type of the {@link Label | label} component. This is assigned as the memory address of the
+ * The forwarded reference type of the {@link Label | label}
+ * component. This is assigned as the memory address of the
  * {@link PrimitiveRoot} component.
  */
 export type LabelForwardedReferenceType = ElementRef<typeof PrimitiveRoot>;
@@ -18,9 +19,13 @@ export type LabelForwardedReferenceType = ElementRef<typeof PrimitiveRoot>;
 export type LabelProps = ComponentPropsWithoutRef<typeof PrimitiveRoot>;
 
 /**
- * A {@link HTMLLabelElement | label} is a text that describes the purpose of an input. It is used to make the input
- * more accessible. It is also used to make the input more usable by allowing the user to click on the label to focus
- * the input - The default behaviour of the input is to focus when clicked, but this is not the case for all inputs.
+ * A {@link HTMLLabelElement | label} is a text that
+ * describes the purpose of an input. It is used to make the
+ * input more accessible. It is also used to make the input
+ * more usable by allowing the user to click on the label to
+ * focus the input - The default behaviour of the input is
+ * to focus when clicked, but this is not the case for all
+ * inputs.
  *
  * @example
  * ```tsx

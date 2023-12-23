@@ -26,7 +26,8 @@ import { SubmitPromptButton } from "../components/submit-prompt-button.module";
 import { UserMessage } from "../components/user-message.module";
 
 /**
- * The object of how the parameters should be provided to Next.js.
+ * The object of how the parameters should be provided to
+ * Next.js.
  */
 type NextParams = ReturnType<typeof useParams>;
 
@@ -65,11 +66,13 @@ export interface UseChatCompletionStreamOptions extends __PickedSessionHistoryRe
 }
 
 /**
- * The "prompt to agent form" module's custom React hook that dispatches an HTTP
- * communication with the server-side and returns the completions asynchronously
- * loaded from the API endpoint via streaming. This uses the given {@link chatId}
- * to ID the conversation with the OpenAI API as sessions (as they call it) and
- * the {@link model} to determine which of the available models to use for the
+ * The "prompt to agent form" module's custom React hook
+ * that dispatches an HTTP communication with the
+ * server-side and returns the completions asynchronously
+ * loaded from the API endpoint via streaming. This uses the
+ * given {@link chatId} to ID the conversation with the
+ * OpenAI API as sessions (as they call it) and the {@link model}
+ * to determine which of the available models to use for the
  * interaction.
  *
  * @see https://npmjs.com/package/ai
@@ -87,7 +90,8 @@ export function useChatCompletionStream({ chatId, messages, model }: UseChatComp
   );
 
   /**
-   * The completions asynchronously loaded from the API endpoint via streaming.
+   * The completions asynchronously loaded from the API
+   * endpoint via streaming.
    *
    * @see {@link useCompletion}
    * @see https://npmjs.com/package/ai
@@ -117,7 +121,8 @@ export interface ChatSessionHistory {
 }
 
 /**
- * The type that shapes the state of the chat session history.
+ * The type that shapes the state of the chat session
+ * history.
  */
 export interface ChatSessionHistoryReducerState {
   messages: ChatSessionHistory[];
@@ -136,7 +141,8 @@ export type ChatSessionHistoryReducerAction = {
 };
 
 /**
- * The reducer function that handles the chat session history.
+ * The reducer function that handles the chat session
+ * history.
  */
 export function createChatSessionHistoryReducer(
   state: ChatSessionHistoryReducerState = initialChatSessionHistoryState,
@@ -155,8 +161,8 @@ export function createChatSessionHistoryReducer(
 }
 
 /**
- * The custom React hook that handles the form submission and the input change
- * event handlers.
+ * The custom React hook that handles the form submission
+ * and the input change event handlers.
  */
 export function usePromptFormHandlers() {
   const [{ messages }, dispatchChatSessionHistoryAction] = useReducer(
@@ -180,8 +186,8 @@ export function usePromptFormHandlers() {
 
   /**
    * The callback function that handles the {@link ReactFormEvent | event}
-   * handler the submission of the form and resets the {@link HTMLInputElement | input}
-   * element.
+   * handler the submission of the form and resets the
+   * {@link HTMLInputElement | input} element.
    */
   const handleSubmit = useCallback(
     function onSubmitEventHandler(event: ReactFormEvent<HTMLFormElement>) {
@@ -200,8 +206,8 @@ export function usePromptFormHandlers() {
 
   /**
    * The callback function that handles the {@link ReactKeyboardEvent | event}
-   * handler the submission of the form and resets the {@link HTMLInputElement | input}
-   * element.
+   * handler the submission of the form and resets the
+   * {@link HTMLInputElement | input} element.
    */
   const handleKeyDown = useCallback(function onKeyDownEventHandler(event: ReactKeyboardEvent<HTMLElement>) {
     if (event.key !== "Enter") {
@@ -251,13 +257,15 @@ export function usePromptFormHandlers() {
 }
 
 /**
- * The component that combines the UI and creates the form for the user's prompt
- * with the input for them to interact with the AI model.
+ * The component that combines the UI and creates the form
+ * for the user's prompt with the input for them to interact
+ * with the AI model.
  *
- * To render the chat box, the form utilises the {@link useChatCompletionStream}
- * custom React hook to dispatch an HTTP communication with the server-side and
- * returns the completions asynchronously loaded from the API endpoint via
- * streaming.
+ * To render the chat box, the form utilises the
+ * {@link useChatCompletionStream} custom React hook to
+ * dispatch an HTTP communication with the server-side and
+ * returns the completions asynchronously loaded from the
+ * API endpoint via streaming.
  *
  * @see {@link useChatCompletionStream}
  */
@@ -287,7 +295,7 @@ export function PromptToAgentForm(): JSX.Element {
             </Fragment>
           );
         })}
-        {!!isCompletionStreaming && <BotMessage message={completion} isPulsing={isLoading} />}
+        {isCompletionStreaming && <BotMessage message={completion} isPulsing={isLoading} />}
       </ChatBox>
       <form onSubmit={handleSubmit} ref={formElementReference}>
         <BottomBar className="max-w-md md:max-w-lg lg:max-w-4xl shadow-lg border-gray-400 p-2 rounded-lg ring-1 ring-gray-200 dark:ring-gray-800 focus-within:ring-green-500">

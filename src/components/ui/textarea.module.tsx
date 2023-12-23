@@ -13,8 +13,8 @@ export type TextareaForwardedReferenceType = HTMLTextAreaElement;
 type HTMLTextAreaElementAttributes = TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 /**
- * The type of the HTML textarea element's attributes that are remembered from the
- * {@link HTMLTextAreaElementAttributes}.
+ * The type of the HTML textarea element's attributes that
+ * are remembered from the {@link HTMLTextAreaElementAttributes}.
  */
 type RememberedHTMLTextAreaElementAttributes = Omit<HTMLTextAreaElementAttributes, "children">;
 

@@ -1,5 +1,6 @@
 /**
- * The exception that is thrown when a given React component does not have a display name.
+ * The exception that is thrown when a given React component
+ * does not have a display name.
  */
 export class ReactComponentDisplayNameNotFoundException extends Error {
   constructor(public readonly componentName: string) {
@@ -8,7 +9,8 @@ export class ReactComponentDisplayNameNotFoundException extends Error {
 }
 
 /**
- * The exception that is thrown when a given prop is not allowed in a React component.
+ * The exception that is thrown when a given prop is not
+ * allowed in a React component.
  */
 export class ReactComponentPropNotAllowedException extends Error {
   constructor(public readonly componentName: string, public readonly propName: string) {

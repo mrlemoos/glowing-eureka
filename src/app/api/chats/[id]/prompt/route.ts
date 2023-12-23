@@ -5,24 +5,28 @@ import { OpenAIStream, StreamingTextResponse } from "ai";
 import { type OpenAIModel } from "@root/constants/openai";
 
 /**
- * The notation that tells Vercel to run this endpoint on the Edge so we make it run smarter and faster.
+ * The notation that tells Vercel to run this endpoint on
+ * the Edge so we make it run smarter and faster.
  */
 export const runtime = "edge";
 
 /**
- * The key for the query parameter that specifies the model to use for the {@link OpenAIModel | OpenAI} API.
+ * The key for the query parameter that specifies the model
+ * to use for the {@link OpenAIModel | OpenAI} API.
  */
 const __MODEL_SEARCH_PARAM_KEY = "model" as const;
 
 /**
- * The maximum number of tokens that can be sent to the {@link OpenAI} API.
+ * The maximum number of tokens that can be sent to the
+ * {@link OpenAI} API.
  */
 const __openai = new OpenAI({
   apiKey: process.env.OPEN_AI_API_KEY,
 });
 
 /**
- * The HTTP method for the POST route that auto-completes the model options to the {@link OpenAIModel | OpenAI} API.
+ * The HTTP method for the POST route that auto-completes
+ * the model options to the {@link OpenAIModel | OpenAI} API.
  *
  * @example
  * ```http

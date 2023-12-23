@@ -3,12 +3,14 @@ import zod from "zod";
 import { OpenAIModel, OpenAIModelMap } from "@root/constants/openai";
 
 /**
- * The accepted models for the prompt chat endpoint. This is used for validation, and is converted to a string array.
+ * The accepted models for the prompt chat endpoint. This is
+ * used for validation, and is converted to a string array.
  */
 const __ACCEPTED_MODELS = Object.values(OpenAIModelMap) as readonly OpenAIModel[];
 
 /**
- * The schema for the request body of the prompt chat endpoint.
+ * The schema for the request body of the prompt chat
+ * endpoint.
  */
 export const PromptChatSchema = zod.object({
   model: zod.enum(__ACCEPTED_MODELS as [string], {
@@ -30,7 +32,8 @@ export const PromptChatSchema = zod.object({
 export type PromptChatDataTransferObject = zod.infer<typeof PromptChatSchema>;
 
 /**
- * This function parses the given {@link element} to the {@link PromptChatModel} type via the {@link PromptChatSchema}.
+ * This function parses the given {@link element} to the
+ * {@link PromptChatModel} type via the {@link PromptChatSchema}.
  */
 export function parsePromptChat(element: unknown) {
   return PromptChatSchema.parse(element);
