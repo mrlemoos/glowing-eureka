@@ -1,5 +1,7 @@
 import { type JSX } from "react";
 
+import { Markdown } from "@root/components/layout/markdown.module";
+
 export interface BotMessageProps {
   /**
    * The message to be displayed.
@@ -36,7 +38,9 @@ export function BotMessage({ message, isPulsing = false }: BotMessageProps): JSX
           </div>
         )}
       </div>
-      <span className="bg-green-500/5 p-4 rounded-lg">{message}</span>
+      <div className="bg-green-500/5 p-4 rounded-lg">
+        <Markdown source={message} />
+      </div>
     </div>
   );
 }

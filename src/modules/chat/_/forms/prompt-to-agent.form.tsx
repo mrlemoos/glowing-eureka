@@ -298,7 +298,7 @@ export function PromptToAgentForm(): JSX.Element {
         {isCompletionStreaming && <BotMessage message={completion} isPulsing={isLoading} />}
       </ChatBox>
       <form onSubmit={handleSubmit} ref={formElementReference}>
-        <BottomBar className="max-w-md md:max-w-lg lg:max-w-4xl shadow-lg border-gray-400 p-2 rounded-lg ring-1 ring-gray-200 dark:ring-gray-800 focus-within:ring-green-500">
+        <BottomBar className="max-w-md md:max-w-lg lg:max-w-4xl shadow-lg border-gray-400 p-2 rounded-lg ring-1 ring-gray-200 dark:ring-gray-800 focus-within:ring-green-500 bg-background z-30">
           <PromptInput value={input} onChange={handleInputChange} disabled={isLoading} onKeyDown={handleKeyDown} />
           {isLoading ? (
             <div className="h-9 pl-1 py-1 pr-4 inline-flex justify-center gap-3 items-center whitespace-nowrap rounded-md text-sm font-normal transition-all bg-gray-100 text-gray-400">

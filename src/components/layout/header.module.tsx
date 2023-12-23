@@ -28,8 +28,8 @@ export interface HeaderProps extends RememberedHTMLDivElementAttributes {
 
 export function Header({ children, className, ...props }: HeaderProps): JSX.Element {
   return (
-    <header {...props} className={cn("container sticky top-2", className)}>
-      <div className={cn("inline-flex justify-between items-center container p-3")}>
+    <header {...props} className={cn("container sticky top-2 bg-background shadow-xl rounded-3xl", className)}>
+      <div className={cn("inline-flex justify-between items-center container px-1 py-3")}>
         <Link href="/sign-in" target="_blank">
           <span className={cn(FontSerif.className, "font-semibold")}>Glowing Eureka</span>
         </Link>
